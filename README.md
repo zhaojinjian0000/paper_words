@@ -1,5 +1,7 @@
 # paper_words
 organize and translate words in papers.
+- 本项目可以统计论文里英语难词
+- 并离线进行翻译
 
 # install
 ```shell
@@ -47,7 +49,8 @@ python -c "from stardict import *; print(convert_dict('ecdict.db', 'ecdict.csv')
 # 出现文件ecdict.db
 ```
 # usage
-- 修改main.py的以下代码
+- 把你的文件放在inputs文件夹里
+- 修改main.py的以下代码，修改输入文件夹名
 ```python
 words = Words(["inputs/YOLOV6-2209.02976.pdf"])
 words.translate()
@@ -57,3 +60,4 @@ words.get_hard(500,"csv", "./outputs/yolov6.csv")
 ```shell
 python main.py
 ```
+- 会在./outputs/yolov6.csv生成难词表
