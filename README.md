@@ -40,7 +40,6 @@ https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/corpora/omw-1
         -- omw-1.4
 
 export NLTK_DATA=`pwd`/nltk_download #每次都启动终端都运行一次, 否则写在.bashrc or .zshrc里
-cd ../..
 
 # install ECDICT
 git clone git@github.com:skywind3000/ECDICT.git
