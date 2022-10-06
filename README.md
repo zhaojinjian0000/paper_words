@@ -45,10 +45,15 @@ git clone git@github.com:skywind3000/ECDICT.git
 cd ECDICT
 python -c "from stardict import *; print(convert_dict('ecdict.db', 'ecdict.csv'))"
 # 出现文件ecdict.db
-
-
 ```
 # usage
+- 修改main.py的以下代码
+```python
+words = Words(["inputs/YOLOV6-2209.02976.pdf"])
+words.translate()
+words.get_hard(500,"csv", "./outputs/yolov6.csv")
+```
+- 然后直接运行即可
 ```shell
 python main.py
 ```
