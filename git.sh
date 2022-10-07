@@ -1,3 +1,3 @@
 git add .
-git commit -m "v0-init"
+git commit -m $1
 git push origin main
