@@ -9,6 +9,7 @@ organize and translate words in papers.
 pip install loguru
 pip install pdfminer.six
 pip install tabulate
+pip install fpdf
 
 # install nltk
 pip install nltk
