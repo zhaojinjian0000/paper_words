@@ -130,7 +130,7 @@ dmypy.json
 
 # paper_words
 ECDICT/
-inputs/
+# inputs/
 nltk_download/
-outputs/
+# outputs/
 
