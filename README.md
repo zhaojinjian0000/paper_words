@@ -2,6 +2,8 @@
 organize and translate words in papers.
 - 本项目可以统计论文里英语难词
 - 并离线进行翻译
+- [效果展示(pdf)](https://github.com/zhaojinjian0000/paper_words/blob/main/outputs/yolov6.pdf)
+- [效果展示(csv)](https://github.com/zhaojinjian0000/paper_words/blob/main/outputs/yolov6_utf8.csv)
 
 # install
 ```shell
