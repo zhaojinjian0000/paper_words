@@ -71,4 +71,4 @@ hard_words.save(fn="./outputs/yolov6.pdf", ttf="SIMYOU")
 ```shell
 python main.py
 ```
-- 会在./outputs/yolov6.csv生成难词表
+- 会在./outputs/生成难词表
