@@ -39,8 +39,8 @@ https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/corpora/omw-1
     -- corpora
         -- wordnet
         -- omw-1.4
-
-export NLTK_DATA=`pwd`/nltk_download #每次都启动终端都运行一次, 否则写在.bashrc or .zshrc里
+# 如果你放在了其他目录下, 请自行修改NLTK_DATA
+# export NLTK_DATA=`pwd`/nltk_download
 
 # install ECDICT
 git clone git@github.com:skywind3000/ECDICT.git
@@ -52,9 +52,20 @@ python -c "from stardict import *; print(convert_dict('ecdict.db', 'ecdict.csv')
 - 把你的文件放在inputs文件夹里
 - 修改main.py的以下代码，修改输入文件夹名
 ```python
-words = Words(["inputs/YOLOV6-2209.02976.pdf"])
-words.translate()
-words.get_hard(500,"csv", "./outputs/yolov6.csv")
+# init words
+sd = StarDict("./ECDICT/ecdict.db", False)
+words = Words(sd)
+words.load_from_file("inputs/YOLOV6-2209.02976.pdf")
+
+# get hard words
+hard_words = words.filter_hard(
+    frq_thr=500, 
+    easy_words_files=glob.glob("./easy_words/*.csv"),
+)
+# 保存 or 输出
+hard_words.save(fn="./outputs/yolov6_utf8.csv", encoding="utf-8")
+hard_words.save(fn="./outputs/yolov6_gbk.csv", encoding="gbk")
+hard_words.save(fn="./outputs/yolov6.pdf", ttf="SIMYOU")
 ```
 - 然后直接运行即可
 ```shell
